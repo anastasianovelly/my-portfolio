@@ -1,6 +1,7 @@
 // src/App.jsx
 import React from 'react'; // Import React (good practice)
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
+
 import Header from './components/Header'; // Assuming Header is sticky (fixed)
 import Footer from './components/Footer';
 
@@ -25,7 +26,7 @@ import CaseStudyDetailPlaceholder from './components/CaseStudyDetailPlaceholder.
 function App() {
   return (
     <Router>
-      {/* Wrap everything in a flex container to manage layout */}
+    {/* Wrap everything in a flex container to manage layout */}
       <div className="flex flex-col min-h-screen">
         <Header />
         {/* Make the main content area grow to fill available space */}
