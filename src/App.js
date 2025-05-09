@@ -1,6 +1,6 @@
 // src/App.jsx
 import React from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -17,26 +17,30 @@ import TelecomBilling from './pages/case-studies/TelecomBilling.js';
 import PdfExtraction from './pages/case-studies/PdfExtraction.js';
 import EnterpriseUX from './pages/case-studies/EnterpriseUX.js';
 import AiTelecomCopy from './pages/case-studies/AiTelecomCopy.js';
+import AutomotiveDesignSystem from './pages/case-studies/AutomotiveDesignSystem.js';
+import TravelAppResearch from './pages/case-studies/TravelAppResearch.js';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
-    <Router>
+    <div className="App">
       <ScrollToTop />
-      <div className="App">
-        <Header />
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/casestudypage" element={<CaseStudyPage />} />
-          <Route path="/case-studies/telecom-billing" element={<TelecomBilling />} />
-          <Route path="/case-studies/pdf-extraction" element={<PdfExtraction />} />
-          <Route path="/case-studies/enterprise-ux" element={<EnterpriseUX />} />
-          <Route path="/case-studies/ai-telecom" element={<AiTelecomCopy />} />
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/case-studies" element={<CaseStudyPage />} />
+        <Route path="/case-studies/telecom-billing" element={<TelecomBilling />} />
+        <Route path="/case-studies/pdf-extraction" element={<PdfExtraction />} />
+        <Route path="/case-studies/enterprise-ux" element={<EnterpriseUX />} />
+        <Route path="/case-studies/ai-telecom-copy" element={<AiTelecomCopy />} />
+        <Route path="/case-studies/automotive-design-system" element={<AutomotiveDesignSystem />} />
+        <Route path="/case-studies/travel-app-research" element={<TravelAppResearch />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      <Footer />
+    </div>
   );
 }
 

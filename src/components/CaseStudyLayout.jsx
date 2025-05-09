@@ -44,7 +44,7 @@ export default function NewCaseStudyLayout(props) {
         {/* Positioned absolutely within the hero section */}
         <div className="absolute top-0 left-0 p-4 md:p-6 z-20"> {/* Added z-20 to be above overlay */}
           <Link
-              to="/casestudypage" // Link back to the main case studies list page
+              to="/case-studies" // Updated from "/casestudypage"
               // Updated text color for visibility on image/overlay
               className="inline-flex items-center text-white hover:text-gray-200 font-semibold transition duration-300"
           >

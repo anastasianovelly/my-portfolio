@@ -2,7 +2,7 @@ import React from 'react';
 
 function Contact() {
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-4 h-screen flex flex-col justify-center items-center">
       <h1 className="text-2xl font-bold mb-4">Contact</h1>
       <p>This is the about page.</p>
     </div>

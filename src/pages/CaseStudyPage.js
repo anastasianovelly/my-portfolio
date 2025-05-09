@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'; // To link to individual case study det
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 
 // Component definition
-export default function CaseStudyPage() {
+const CaseStudyPage = () => {
 
     // Define the case studies data here (or import from a shared location)
     // Using the same structure as before
@@ -46,7 +46,7 @@ export default function CaseStudyPage() {
             link: '/case-studies/travel-app-research', // Route for the detail page
             imageUrl: `https://placehold.co/600x400/14B8A6/FFFFFF?text=Travel+Research`, // Placeholder image (using teal)
         },
-         {
+        {
             id: 6,
             title: 'AI-Assisted UX Copywriting for Telecom Support',
             description: 'Implemented generative AI tools to assist in creating clear and empathetic UX copy for a telecom customer support portal.',
@@ -115,4 +115,6 @@ export default function CaseStudyPage() {
 
         </div> // End main container div
     );
-}
+};
+
+export default CaseStudyPage;

@@ -7,7 +7,7 @@ export default function PdfExtraction() {
   // --- Define the specific data for this case study ---
   const caseStudyData = {
     title: "AI-Powered PDF Extraction",
-    heroImage: "https://images.unsplash.com/photo-1741283380944-5c750abb4a6d?q=80&w=1920&auto=format&fit=crop",
+    heroImage: "https://images.unsplash.com/photo-1680016661694-1cd3faf31c3a?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     introduction: "Built an intuitive interface to automatically extract, validate, and export critical tax data from multi-page PDF documents using AI-driven parsing.",
     features: [
       {

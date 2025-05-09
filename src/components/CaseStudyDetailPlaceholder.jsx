@@ -34,6 +34,17 @@ export default function CaseStudyDetailPlaceholder() {
             aria-labelledby="case-study-title"
             // Note: onError doesn't work directly on style background images
           >
+            <div className="absolute top-0 left-0 p-4 md:p-6 z-20"> {/* Added z-20 to be above overlay */}
+              <Link
+                  to="/case-studies" // Updated from "/casestudypage"
+                  // Updated text color for visibility on image/overlay
+                  className="inline-flex items-center text-white hover:text-gray-200 font-semibold transition duration-300"
+              >
+                  <ArrowLeftIcon className="h-5 w-5 mr-1" />
+                  Back to Case Studies
+              </Link>
+            </div>
+    
             {/* Dark overlay for better text readability */}
             <div className="absolute inset-0 bg-black opacity-40"></div>
 
@@ -45,17 +56,6 @@ export default function CaseStudyDetailPlaceholder() {
                 </h1>
             </div>
           </section>
-
-          {/* --- Back Link Section (from EnterpriseUX layout) --- */}
-          <div className="w-full px-4 pt-8 md:pt-12"> {/* changed from "container mx-auto px-4 pt-8 md:pt-12" */}
-            <Link
-                to="/casestudypage" // Link back to the main case studies list page
-                className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition duration-300"
-            >
-                <ArrowLeftIcon className="h-5 w-5 mr-1" />
-                Back to Case Studies
-            </Link>
-          </div>
 
            {/* --- Introduction Section (Placeholder Content) --- */}
            {/* Using structure from EnterpriseUX layout */}

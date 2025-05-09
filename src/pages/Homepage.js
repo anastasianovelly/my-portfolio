@@ -69,7 +69,7 @@ export default function Homepage() {
                             With 8 years of experience, I specialize in crafting intuitive and engaging user experiences, focusing on design systems, UI/UX design, and the application of generative AI.
                         </p>
                         {/* Updated primary and secondary */}
-                            <Link to="/casestudypage" className="bg-primary text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-primary-dark transition duration-300 inline-block mr-4 mb-4 md:mb-0">
+                            <Link to="/case-studies" className="bg-primary text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-primary-dark transition duration-300 inline-block mr-4 mb-4 md:mb-0">
                             View My Work
                         </Link>
                         <a href="#contact" className="bg-secondary text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-secondary-dark transition duration-300 inline-block">Get In Touch</a>

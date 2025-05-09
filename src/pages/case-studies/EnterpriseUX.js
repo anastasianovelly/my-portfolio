@@ -8,7 +8,7 @@ export default function TelecomBilling() {
   // --- Define the specific data for this case study ---
   const caseStudyData = {
     title: "Telecom Billing Optimization",
-    heroImage: "https://images.unsplash.com/photo-1741283380944-5c750abb4a6d?q=80&w=1920&auto=format&fit=crop",
+    heroImage: "https://images.unsplash.com/photo-1680016661694-1cd3faf31c3a?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     introduction: "Optimized cost recovery workflows for a Fortune 100 telecommunications provider by redesigning user interfaces and automating validation checks to reduce billing errors and improve revenue accuracy.",
     features: [
       {
