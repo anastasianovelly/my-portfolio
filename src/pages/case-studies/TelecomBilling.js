@@ -1,37 +1,106 @@
 import React from 'react';
-// Import the reusable layout component
 import NewCaseStudyLayout from '../../components/CaseStudyLayout.jsx';
-
+import { 
+  PaintBrushIcon, 
+  ChartBarIcon, 
+  CogIcon, 
+  ScaleIcon, 
+  CommandLineIcon 
+} from '@heroicons/react/24/outline';
 
 export default function TelecomBilling() {
   const caseStudyData = {
-    title: "AI-Powered PDF Extraction",
-    heroImage: "https://images.unsplash.com/photo-1690228254548-31ef53e40cd1?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    introduction: "Built an intuitive interface to automatically extract, validate, and export critical tax data from multi-page PDF documents using AI-driven parsing.",
-    features: [
-      {
-        title: "Challenge",
-        description: "Manual extraction of scattered tax fields across large PDF reports was error-prone, time-intensive, and required expert review.",
-      },
-      {
-        title: "Solution",
-        description: "Designed AI-assisted workflows that highlight and extract data in-context, presenting inline editing and validation before export.",
-      },
-      {
-        title: "Outcome",
-        description: "Reduced processing time by over 70%, cut error rates in half, and improved user satisfaction scores through clearer workflows.",
-      },
-    ],
-    timeline: [
-      { phase: 1, title: "Discovery & Research", date: "Q1 2024", description: "Interviewed tax analysts, audited current workflows, and defined core pain points in document parsing." },
-      { phase: 2, title: "Design & Prototyping", date: "Q2 2024", description: "Created wireframes and interactive Figma prototypes, validating AI integration with user testing." },
-      { phase: 3, title: "Development Handoff", date: "Q3 2024", description: "Delivered comprehensive specs, collaborated with engineers on AI API integration and UI components." },
-      { phase: 4, title: "Post-Launch Review", date: "Q4 2024", description: "Analyzed usage metrics, gathered feedback for enhancements, and planned multi-language support." },
-    ],
+    title: "Contracts and Applications Management",
+    heroImage: "https://images.unsplash.com/photo-1690228254548-31ef53e40cd1?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.1.0",
+    introduction: "As a Senior UX Designer, I led the creation of an AI-enhanced platform that simplifies the way enterprise users manage, validate, and act on contracts and applications—transforming a traditionally fragmented process into a streamlined, intelligent workflow.",
+    
+    problem: {
+      title: "The Problem",
+      description: "Enterprise teams were overwhelmed by inconsistent contract data, manual review bottlenecks, and fragmented tools. Users struggled to track metadata, verify accuracy, and comply with submission requirements—especially when preparing data for ingestion into downstream systems.",
+      keyPoints: []
+    },
+    
+    solution: {
+      title: "The Solution",
+      description: "We designed an intuitive platform powered by AI to support enterprise contract management.",
+      keyPoints: [
+        "Smart contract validation with visual flags for missing or incorrect fields",
+        "Searchable contract libraries using vector-based metadata filtering",
+        "AI-assisted review prompts to guide users through submission",
+        "Seamless integration with ingestion systems, ensuring end-to-end data integrity"
+      ]
+    },
+
+    team: {
+      title: "The Team",
+      members: [
+        {
+          name: "UX Design",
+          role: "Lead",
+          icon: PaintBrushIcon,
+          description: "Led experience strategy, user flows, validation models, and system interaction patterns"
+        },
+        {
+          name: "Product Management",
+          role: "Product Owner",
+          icon: ChartBarIcon,
+          description: "Defined system requirements, aligned goals with business ops"
+        },
+        {
+          name: "Engineering",
+          role: "Development Team",
+          icon: CogIcon,
+          description: "Built data ingestion, AI prompt infrastructure, and metadata tagging logic"
+        },
+        {
+          name: "Legal/Compliance",
+          role: "Advisors",
+          icon: ScaleIcon,
+          description: "Provided rules for contract validation and AML requirements"
+        },
+        {
+          name: "AI/ML",
+          role: "Technical Team",
+          icon: CommandLineIcon,
+          description: "Powered vector search, recommendations, and metadata classification"
+        }
+      ]
+    },
+
+    process: {
+      title: "The Process",
+      description: "Our approach focused on creating a user-centric AI-powered platform",
+      steps: [
+        { 
+          title: "Research", 
+          description: "Analyzed user pain points and current workflows" 
+        },
+        { 
+          title: "Design", 
+          description: "Created intuitive interfaces with AI integration" 
+        },
+        { 
+          title: "Development", 
+          description: "Built and integrated AI-powered features" 
+        },
+        { 
+          title: "Testing", 
+          description: "Validated with users and refined the experience" 
+        }
+      ]
+    },
+
+    takeaways: {
+      title: "Key Takeaways",
+      points: [
+        "Clarity reduces risk: Clear validation UX prevents downstream compliance issues",
+        "Small enhancements compound: Features like recent activity recall saved minutes per user daily",
+        "Collaboration is critical: Legal, ops, and AI teams shaped a more complete user experience",
+        "AI works best with trust: Visible data sources and status feedback built confidence in the system"
+      ]
+    }
   };
 
-  // Render the reusable layout component with the PDF extraction data
   return <NewCaseStudyLayout data={caseStudyData} />;
-
-  }
+}
 

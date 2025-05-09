@@ -5,15 +5,15 @@ import { Link } from 'react-router-dom'; // To link to individual case study det
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 
 // Component definition
-const CaseStudyPage = () => {
+export default function CaseStudyPage() {
 
     // Define the case studies data here (or import from a shared location)
     // Using the same structure as before
     const caseStudies = [
         {
             id: 1,
-            title: 'Telecom Billing Optimization',
-            description: 'Streamlined cost recovery for a Fortune 100 telecom company, enhancing accuracy and efficiency.',
+            title: 'Contracts and Applications Management',
+            description: 'An intuitive platform powered by AI to support enterprise contract management.',
             link: '/case-studies/telecom-billing', // Route for the detail page
             imageUrl: `https://placehold.co/600x400/2563EB/FFFFFF?text=Telecom+Project`, // Placeholder image (using default blue hex)
         },
@@ -115,6 +115,4 @@ const CaseStudyPage = () => {
 
         </div> // End main container div
     );
-};
-
-export default CaseStudyPage;
+}

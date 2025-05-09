@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const navLinks = [
+  { to: '/projects', label: 'Projects' },
   { to: '/case-studies', label: 'Case Studies' },
   { to: '/about', label: 'About' },
   { to: '/contact', label: 'Contact' },

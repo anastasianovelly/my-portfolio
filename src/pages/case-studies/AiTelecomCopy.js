@@ -1,44 +1,94 @@
 import React from 'react';
-// Import the reusable layout component
-// Make sure this path is correct based on your file structure
 import NewCaseStudyLayout from '../../components/CaseStudyLayout.jsx';
+import { 
+  PencilSquareIcon,
+  ChartBarSquareIcon,
+  ChatBubbleLeftRightIcon,
+  CpuChipIcon,
+  ClipboardDocumentCheckIcon
+} from '@heroicons/react/24/outline';
 
-// Specific component for the AI Telecom Copy case study
 export default function AiTelecomCopy() {
-
-  // --- Define the specific data for THIS case study ---
-  // Structure the data to match the 'data' prop expected by NewCaseStudyLayout
   const caseStudyData = {
-    title: "AI-Assisted UX Copywriting for Telecom Support",
-    // Use a relevant hero image URL
-    heroImage: "https://images.unsplash.com/photo-1681583484651-281ae2defb17?q=80&w=3860&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    introduction: "This project explored the application of generative AI to enhance the quality and consistency of UX copy within a major telecommunications provider's customer support portal, aiming to assist content designers and support staff.",
-    // Use the 'features' array for key aspects like Challenge, Solution, etc.
-    features: [
-      {
-        title: "Challenge",
-        description: "The existing process for writing and maintaining UX copy across the large support portal was time-consuming and led to inconsistencies in tone and terminology, impacting user experience and agent efficiency.",
-      },
-      {
-        title: "Solution",
-        description: "Researched and integrated a fine-tuned generative AI model within the CMS. Designed a custom interface for generating drafts, rewriting copy, checking style consistency, and summarizing technical content.",
-      },
-      {
-        title: "Key Outcome",
-        description: "Significantly reduced drafting time for standard support responses (approx. 30%) and improved overall content consistency scores based on internal reviews.",
-      },
-    ],
-    // Define the project timeline
-    timeline: [
-      { phase: 1, title: "Research & AI Model Selection", date: "Q1 2024", description: "Analyzed existing workflows, researched suitable AI models, defined requirements." },
-      { phase: 2, title: "Integration & Interface Design", date: "Q2 2024", description: "Integrated the AI model, designed the CMS interface, conducted initial user testing with designers." },
-      { phase: 3, title: "Fine-tuning & Guideline Development", date: "Q3 2024", description: "Fine-tuned the AI model with company data, developed user guidelines and training materials." },
-      { phase: 4, title: "Pilot Rollout & Feedback", date: "Q4 2024", description: "Launched a pilot program with support teams, gathered feedback, and planned wider implementation." },
-    ],
+    title: "Connected Customer Journey",
+    heroImage: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=3000&auto=format&fit=crop",
+    introduction: "I led the UX design of a connected customer journey platform that uses predictive modeling, AI messaging, and behavioral insights to drive retention and deliver hyper-personalized engagement across the customer lifecycle.",
+    
+    problem: {
+      title: "The Problem",
+      description: "Customer churn was rising due to a lack of personalized communication and limited visibility into where users were dropping off in their journey. Internal teams lacked the tools to segment users effectively, understand sentiment trends, or intervene with meaningful offers in real time.",
+      keyPoints: []
+    },
+    
+    solution: {
+      title: "The Solution",
+      description: "We created an AI-enhanced platform that empowers customer experience teams to:",
+      keyPoints: [
+        "Segment customers dynamically based on historical behavior and churn risk",
+        "Generate empathetic AI-driven messages for frustrated or high-risk customers",
+        "Deliver personalized offers based on journey friction points, sentiment, and user intent",
+        "Use an insights dashboard to visualize customer health, sentiment shifts, and engagement outcomes",
+        "Monitor offer success in real time and adjust based on confidence levels and interaction feedback"
+      ]
+    },
+
+    team: {
+      title: "The Team",
+      members: [
+        {
+          name: "UX Design",
+          role: "Lead Designer",
+          icon: PencilSquareIcon,
+          description: "Designed dashboard views, messaging flows, and segmentation logic"
+        },
+        {
+          name: "Data Science",
+          role: "Analytics Team",
+          icon: ChartBarSquareIcon,
+          description: "Developed churn prediction models and offer optimization logic"
+        },
+        {
+          name: "Marketing & CX",
+          role: "Strategy",
+          icon: ChatBubbleLeftRightIcon,
+          description: "Defined messaging strategies and offer thresholds"
+        },
+        {
+          name: "AI/NLP Engineers",
+          role: "Technical Team",
+          icon: CpuChipIcon,
+          description: "Built sentiment detection and message generation pipelines"
+        },
+        {
+          name: "Product Owners",
+          role: "Product Lead",
+          icon: ClipboardDocumentCheckIcon,
+          description: "Prioritized retention goals and aligned with roadmap objectives"
+        }
+      ]
+    },
+
+    process: {
+      title: "The Process",
+      description: "Our approach focused on creating a data-driven customer engagement platform",
+      steps: [
+        { title: "Research", description: "Analyzed churn patterns and customer behavior" },
+        { title: "Design", description: "Created personalized engagement workflows" },
+        { title: "Development", description: "Integrated AI messaging and predictive models" },
+        { title: "Testing", description: "Validated with CX teams and measured impact" }
+      ]
+    },
+
+    takeaways: {
+      title: "Key Takeaways",
+      points: [
+        "Personalization reduces churn: Tailored messaging and offers led to improved retention rates",
+        "Transparency empowers teams: Visual dashboards gave CX and marketing teams clearer insight into what's working",
+        "Empathy can be designed: Even AI-generated messages can feel human when grounded in user context",
+        "Data-informed UX drives impact: Designs anchored in behavioral signals led to more relevant and timely interventions"
+      ]
+    }
   };
 
-  // Render the NEW layout component, passing the specific data object as the 'data' prop
-  return (
-    <NewCaseStudyLayout data={caseStudyData} />
-  );
+  return <NewCaseStudyLayout data={caseStudyData} />;
 }

@@ -1,37 +1,95 @@
 import React from 'react';
-// Import the reusable layout component
 import NewCaseStudyLayout from '../../components/CaseStudyLayout.jsx';
+import { 
+  PencilSquareIcon, 
+  CommandLineIcon,
+  ServerIcon,
+  ClipboardDocumentListIcon,
+  MagnifyingGlassIcon
+} from '@heroicons/react/24/outline';
 
-// Specific component for the Telecom Billing Optimization case study
-export default function TelecomBilling() {
-
-  // --- Define the specific data for this case study ---
+export default function EnterpriseUX() {
   const caseStudyData = {
-    title: "Telecom Billing Optimization",
-    heroImage: "https://images.unsplash.com/photo-1680016661694-1cd3faf31c3a?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    introduction: "Optimized cost recovery workflows for a Fortune 100 telecommunications provider by redesigning user interfaces and automating validation checks to reduce billing errors and improve revenue accuracy.",
-    features: [
-      {
-        title: "Challenge",
-        description: "Complex rate structures and manual data entry led to frequent billing discrepancies and revenue leakage across multiple service lines.",
-      },
-      {
-        title: "Solution",
-        description: "Conducted user interviews to map pain points, redesigned billing UI for clarity, and integrated automated rule-based validation to flag anomalies before submission.",
-      },
-      {
-        title: "Outcome",
-        description: "Reduced billing error rate by 60%, sped up month-end close by 40%, and received stakeholder praise for increased transparency and ease of use.",
-      },
-    ],
-    timeline: [
-      { phase: 1, title: "Discovery & Research", date: "Q3 2023", description: "Interviewed billing analysts and stakeholders, audited existing workflows, and defined key requirements." },
-      { phase: 2, title: "Design & Prototyping", date: "Q4 2023", description: "Created wireframes and interactive prototypes in Figma, validating flows through user testing sessions." },
-      { phase: 3, title: "Development & QA", date: "Q1 2024", description: "Collaborated with engineering to implement UI updates and validation rules, conducting design QA and bug fixes." },
-      { phase: 4, title: "Launch & Evaluation", date: "Q2 2024", description: "Rolled out updates, monitored key metrics, and iterated on feedback for continuous improvement." },
-    ],
+    title: "Generative Intelligence Platform",
+    heroImage: "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=2940&auto=format&fit=crop",
+    introduction: "I led the UX design of a next-generation document intelligence platform that enables users to interact with complex documents using natural language—transforming static files into dynamic, conversational assets.",
+    
+    problem: {
+      title: "The Problem",
+      description: "Professionals in regulated, document-heavy industries often struggle to extract timely, trustworthy information from dense, multi-source documentation. Legacy systems required manual cross-referencing, lacked transparency, and made document comparison and summarization error-prone and time-consuming.",
+      keyPoints: []
+    },
+    
+    solution: {
+      title: "The Solution",
+      description: "We designed a document AI interface powered by large language models (LLMs) that lets users:",
+      keyPoints: [
+        "Chat with documents to ask questions and extract insights",
+        "Compare multiple documents for alignment, conflicts, and changes",
+        "Summarize content with contextual, source-linked output",
+        "Scale across platforms with a collapsible, modular navigation system",
+        "Use a structured input model that handles full documents, excerpts, or pasted text",
+        "Trust results via source-aware responses and citation display"
+      ]
+    },
+
+    team: {
+      title: "The Team",
+      members: [
+        {
+          name: "UX Design",
+          role: "Lead Designer",
+          icon: PencilSquareIcon,
+          description: "Led interaction design, input patterns, and platform-wide scalability"
+        },
+        {
+          name: "AI/ML Engineers",
+          role: "Technical Team",
+          icon: CommandLineIcon,
+          description: "Integrated LLMs, comparison logic, and summarization tuning"
+        },
+        {
+          name: "Platform Architects",
+          role: "Infrastructure",
+          icon: ServerIcon,
+          description: "Enabled input handling across PDFs, Word files, and structured text"
+        },
+        {
+          name: "Product Managers",
+          role: "Product Lead",
+          icon: ClipboardDocumentListIcon,
+          description: "Prioritized features for legal, compliance, and operations use cases"
+        },
+        {
+          name: "Researchers",
+          role: "UX Research",
+          icon: MagnifyingGlassIcon,
+          description: "Validated patterns with real users from corporate, telecom, and compliance backgrounds"
+        }
+      ]
+    },
+
+    process: {
+      title: "The Process",
+      description: "Our approach focused on creating a scalable, trustworthy document AI platform",
+      steps: [
+        { title: "Research", description: "Analyzed user needs across different document types" },
+        { title: "Design", description: "Created modular, scalable interaction patterns" },
+        { title: "Development", description: "Integrated AI capabilities with user-friendly interfaces" },
+        { title: "Testing", description: "Validated with users across different industries" }
+      ]
+    },
+
+    takeaways: {
+      title: "Key Takeaways",
+      points: [
+        "Cross-platform scalability matters: Input and navigation needed to work for chat, search, and analysis use cases",
+        "Trust is built through transparency: Source-linked answers were key to user confidence",
+        "Modular design accelerates adoption: Patterns developed for this project now apply across the AI platform",
+        "Document AI isn't one-size-fits-all: Designing for different document types required flexible but structured user input strategies"
+      ]
+    }
   };
 
-  // Render the reusable layout component with the telecom billing data
   return <NewCaseStudyLayout data={caseStudyData} />;
 }

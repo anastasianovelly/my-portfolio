@@ -1,36 +1,94 @@
 import React from 'react';
-// Import the reusable layout component
 import NewCaseStudyLayout from '../../components/CaseStudyLayout.jsx';
+import { 
+  PencilSquareIcon, 
+  CodeBracketIcon,
+  ClipboardDocumentListIcon,
+  BuildingLibraryIcon,
+  ShieldCheckIcon
+} from '@heroicons/react/24/outline';
 
-// Specific component for the AI-Powered PDF Extraction case study
 export default function PdfExtraction() {
-  // --- Define the specific data for this case study ---
   const caseStudyData = {
-    title: "AI-Powered PDF Extraction",
-    heroImage: "https://images.unsplash.com/photo-1680016661694-1cd3faf31c3a?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    introduction: "Built an intuitive interface to automatically extract, validate, and export critical tax data from multi-page PDF documents using AI-driven parsing.",
-    features: [
-      {
-        title: "Challenge",
-        description: "Manual extraction of scattered tax fields across large PDF reports was error-prone, time-intensive, and required expert review.",
-      },
-      {
-        title: "Solution",
-        description: "Designed AI-assisted workflows that highlight and extract data in-context, presenting inline editing and validation before export.",
-      },
-      {
-        title: "Outcome",
-        description: "Reduced processing time by over 70%, cut error rates in half, and improved user satisfaction scores through clearer workflows.",
-      },
-    ],
-    timeline: [
-      { phase: 1, title: "Discovery & Research", date: "Q1 2024", description: "Interviewed tax analysts, audited current workflows, and defined core pain points in document parsing." },
-      { phase: 2, title: "Design & Prototyping", date: "Q2 2024", description: "Created wireframes and interactive Figma prototypes, validating AI integration with user testing." },
-      { phase: 3, title: "Development Handoff", date: "Q3 2024", description: "Delivered comprehensive specs, collaborated with engineers on AI API integration and UI components." },
-      { phase: 4, title: "Post-Launch Review", date: "Q4 2024", description: "Analyzed usage metrics, gathered feedback for enhancements, and planned multi-language support." },
-    ],
+    title: "Custom Work Order System",
+    heroImage: "https://images.unsplash.com/photo-1680016661694-1cd3faf31c3a?q=80&w=3174&auto=format&fit=crop",
+    introduction: "I led the UX design for a custom work order system that streamlined task intake, billing configuration, and operational workflows—unlocking cost recovery and reducing invoice delays for high-volume project teams.",
+    
+    problem: {
+      title: "The Problem",
+      description: "Teams were overwhelmed by manual billing tasks, inconsistent work order processes, and a backlog of unprocessed, billable work. Existing tools lacked support for incremental billing, rules-driven workflows, and flexible approval pathways—making cost recovery slow and error-prone.",
+      keyPoints: []
+    },
+    
+    solution: {
+      title: "The Solution",
+      description: "We designed a custom work order platform to automate and simplify key financial and operational processes:",
+      keyPoints: [
+        "Task and status management for clear ownership and tracking",
+        "Rules-based billing configuration to support incremental and milestone-based payments",
+        "User role and permission management to match how teams work across systems",
+        "Feeder system integrations to connect work orders with accounts payable and contract metadata",
+        "A structured interface to validate inputs and reduce rework before submission"
+      ]
+    },
+
+    team: {
+      title: "The Team",
+      members: [
+        {
+          name: "UX Design",
+          role: "Lead Designer",
+          icon: PencilSquareIcon,
+          description: "Defined workflows, data validation states, and role-specific views"
+        },
+        {
+          name: "Engineering",
+          role: "Development Team",
+          icon: CodeBracketIcon,
+          description: "Implemented integrations with finance and project tracking systems"
+        },
+        {
+          name: "Product Managers",
+          role: "Product Lead",
+          icon: ClipboardDocumentListIcon,
+          description: "Scoped requirements based on billing complexity and backlog priorities"
+        },
+        {
+          name: "Finance & Ops",
+          role: "Stakeholders",
+          icon: BuildingLibraryIcon,
+          description: "Helped define user needs and rules for invoice readiness"
+        },
+        {
+          name: "Compliance",
+          role: "Analysts",
+          icon: ShieldCheckIcon,
+          description: "Ensured auditability and rule adherence within the system"
+        }
+      ]
+    },
+
+    process: {
+      title: "The Process",
+      description: "Our approach focused on creating a scalable work order management system",
+      steps: [
+        { title: "Research", description: "Analyzed billing workflows and pain points" },
+        { title: "Design", description: "Created role-specific interfaces and validation patterns" },
+        { title: "Development", description: "Built integrations and automated workflows" },
+        { title: "Testing", description: "Validated with finance teams and stakeholders" }
+      ]
+    },
+
+    takeaways: {
+      title: "Key Takeaways",
+      points: [
+        "Work order clarity improves cash flow: Clear validation and configuration led to faster billing cycles",
+        "Role-aware design matters: Admins, reviewers, and submitters needed tailored UX to prevent bottlenecks",
+        "Upstream integration prevents downstream pain: Pulling in contract and PO data saved time and reduced errors",
+        "Incremental billing is complex, but solvable: Flexible configuration patterns made this scalable across teams"
+      ]
+    }
   };
 
-  // Render the reusable layout component with the PDF extraction data
   return <NewCaseStudyLayout data={caseStudyData} />;
 }

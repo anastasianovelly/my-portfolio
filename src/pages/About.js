@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'; // Import Link for navigation if needed
 
 // Import relevant Heroicons
 import {
-    UserCircleIcon,
     AcademicCapIcon, // For Journey/Experience
     SparklesIcon,    // For Gen AI / Innovation
     LightBulbIcon,   // For Philosophy/Approach

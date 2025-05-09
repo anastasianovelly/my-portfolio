@@ -1,128 +1,184 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link for navigation
-import { ArrowLeftIcon } from '@heroicons/react/24/outline'; // Import icon for the link
+import { Link } from 'react-router-dom';
+import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 
-// Default data structure for safety, in case props are missing
+// Default data structure for safety
 const defaultData = {
   title: "Case Study",
-  heroImage: "https://images.unsplash.com/photo-1576153192396-180ecef2a715?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  heroImage: "https://images.unsplash.com/photo-1576153192396-180ecef2a715?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.1.0",
   introduction: "Introduction content not provided.",
   features: [
     { title: "Feature/Challenge", description: "Details not provided." }
   ],
   timeline: [
-    { phase: '?', title: "Timeline Event", date: "N/A", description: "Details not provided." }
+    { phase: '1', title: "Office Inauguration Function", date: "Oct 01, 2020", description: "Started journey with new office", images: ['img1.jpg','img2.jpg','img3.jpg'] },
+    { phase: '2', title: "Reached New Record", date: "Sep 16, 2020", description: "Lifetime accreditation from IAO (First Business Advisory Firm in India)" },
+    { phase: '3', title: "Design Meetup", date: "Sep 12, 2020", description: "Compete head to head with friends and rivals" },
+    { phase: '4', title: "New People Joined", date: "Aug 20, 2020", description: "John Smith, Designer", avatar: 'john.jpg' },
   ],
+  problem: {
+    title: "The Problem",
+    description: "Problem description not provided.",
+    keyPoints: []
+  },
+  solution: {
+    title: "The Solution",
+    description: "Solution description not provided.",
+    keyPoints: []
+  },
+  process: {
+    title: "The Process",
+    description: "Process description not provided.",
+    steps: [
+      { title: "Research", description: "Research description" },
+      { title: "Design", description: "Design description" },
+      { title: "Development", description: "Development description" },
+      { title: "Testing", description: "Testing description" }
+    ]
+  },
+  team: {
+    title: "The Team",
+    members: [
+      {
+        name: "Team Member",
+        role: "Role not specified",
+        icon: "👤",
+        description: "Team member description not provided"
+      }
+    ]
+  },
+  takeaways: {
+    title: "Key Takeaways",
+    points: [
+      "Takeaway point not provided"
+    ]
+  },
 };
 
-// New reusable component based on the TelecomBilling example layout
-// Expects a 'data' prop with the specific structure
-export default function NewCaseStudyLayout(props) {
-  // Use provided data or fall back to default
-  const caseStudyData = props.data || defaultData;
-
-  // Basic error handling for background image (console log)
-  const handleImageError = () => {
-      console.error(`Failed to load background image: ${caseStudyData.heroImage}`);
-  };
+export default function NewCaseStudyLayout({ data = {}, heroImage, ...rest }) {
+  const merged = { ...defaultData, ...data };
+  if (heroImage) merged.heroImage = heroImage;
 
   return (
-    // Main container for the page
     <div className="min-h-screen bg-white">
-
-      {/* --- Hero Section --- */}
-      {/* Added relative positioning to contain the absolute positioned link */}
-      <section
-        className="w-full h-[50vh] md:h-[60vh] bg-cover bg-center relative" // Removed flex items-center justify-center here, added relative
-        style={{ backgroundImage: `url(${caseStudyData.heroImage})` }}
-        aria-labelledby="case-study-title"
-      >
-        {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black opacity-40 z-10"></div>
-
-        {/* --- Back Link Section (Moved onto Image) --- */}
-        {/* Positioned absolutely within the hero section */}
-        <div className="absolute top-0 left-0 p-4 md:p-6 z-20"> {/* Added z-20 to be above overlay */}
-          <Link
-              to="/case-studies" // Updated from "/casestudypage"
-              // Updated text color for visibility on image/overlay
-              className="inline-flex items-center text-white hover:text-gray-200 font-semibold transition duration-300"
-          >
-              <ArrowLeftIcon className="h-5 w-5 mr-1" />
-              Back to Case Studies
-          </Link>
+      {/* Hero Section */}
+      <section className="relative h-[60vh] min-h-[400px] w-full">
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${merged.heroImage})` }}
+        >
+          
+          <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         </div>
-
-        {/* Hero Content Container - Centered */}
-        {/* Used flex to center content vertically and horizontally */}
-        <div className="container mx-auto px-4 h-full flex flex-col items-center justify-center text-center relative z-10">
-           <h1 id="case-study-title" className="text-4xl md:text-6xl font-bold text-white mb-4"> {/* Ensured text is white */}
-                {caseStudyData.title}
-            </h1>
+        <div className="relative h-full flex flex-col justify-center items-center text-center px-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            {merged.title}
+          </h1>
+          <p className="text-lg md:text-xl text-white max-w-2xl">
+            {merged.introduction}
+          </p>
+          <div className="absolute top-0 left-0 p-4 md:px-20 z-20"> {/* Added z-20 to be above overlay */}
+              <Link
+                  to="/case-studies" // Updated from "/casestudypage"
+                  // Updated text color for visibility on image/overlay
+                  className="inline-flex items-center text-white hover:text-gray-200 font-semibold transition duration-300"
+              >
+                  <ArrowLeftIcon className="h-5 w-5 mr-1" />
+                  Back to Case Studies
+              </Link>
+            </div>
         </div>
       </section>
 
-      {/* --- Main Content Container --- */}
-      {/* Container for content below the hero */}
-      <div className="container mx-auto px-4">
+      {/* Problem, Solution & Team Section */}
+      <section className="py-16">
+        <div className="container mx-auto max-w-7xl px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+            {/* Problem Column */}
+            <div className="bg-gray-50 p-8 rounded-lg">
+              <h2 className="text-3xl font-bold mb-8">{merged.problem.title}</h2>
+              <p className="text-gray-600 mb-8">{merged.problem.description}</p>
+              {merged.problem.keyPoints?.length > 0 && (
+                <ul className="space-y-4">
+                  {merged.problem.keyPoints.map((point, idx) => (
+                    <li key={idx} className="flex items-start">
+                      <span className="mr-2">•</span>
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
 
-         {/* --- Introduction Section --- */}
-         {/* Added top padding here since the back link is no longer providing it */}
-        <section className="pt-12 md:pt-16">
-           <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-gray-800">Introduction</h2>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                 {caseStudyData.introduction}
-              </p>
-           </div>
-        </section>
-
-      </div> {/* End Main Content Container */}
-
-
-      {/* Sections below can remain outside the main container if they have full-width backgrounds */}
-      {/* Or be moved inside the container above if they should be constrained */}
-
-      {/* --- Features Section (Three Column) --- */}
-      {caseStudyData.features && caseStudyData.features.length > 0 && (
-        <section className="bg-gray-50 py-12 md:py-16 mt-12 md:mt-16">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-              {caseStudyData.features.map((feature, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-                  <h3 className="text-xl font-semibold mb-3 text-gray-800">{feature.title}</h3>
-                  <p className="text-gray-600">{feature.description}</p>
-                </div>
-              ))}
+            {/* Solution Column */}
+            <div className="bg-gray-50 p-8 rounded-lg">
+              <h2 className="text-3xl font-bold mb-8">{merged.solution.title}</h2>
+              <p className="text-gray-600 mb-8">{merged.solution.description}</p>
+              {merged.solution.keyPoints?.length > 0 && (
+                <ul className="space-y-4">
+                  {merged.solution.keyPoints.map((point, idx) => (
+                    <li key={idx} className="flex items-start">
+                      <span className="mr-2">•</span>
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           </div>
-        </section>
-      )}
 
-      {/* --- Timeline Section --- */}
-      {caseStudyData.timeline && caseStudyData.timeline.length > 0 && (
-        <section className="container mx-auto px-4 py-12 md:py-16">
-          <h2 className="text-3xl font-bold text-center mb-12 md:mb-16 text-gray-800">Project Timeline</h2>
-          <div className="relative max-w-2xl mx-auto border-l-4 border-primary pl-8 md:pl-10 space-y-10">
-            {caseStudyData.timeline.map((item, index) => (
-              <div key={index} className="relative">
-                 {/* Timeline Dot */}
-                 <div className="absolute -left-[44px] md:-left-[52px] top-0 z-10 flex items-center justify-center w-6 h-6 mt-1">
-                      <div className="bg-primary w-6 h-6 rounded-full flex items-center justify-center shadow">
-                           <span className="text-white text-xs font-semibold">{item.phase}</span>
-                      </div>
-                 </div>
-                {/* Timeline Item Content */}
-                <div className="bg-gray-50 p-4 md:p-6 rounded-lg shadow-sm border border-gray-200 ml-4 md:ml-0">
-                   <span className="text-sm font-medium text-primary block mb-1">{item.date}</span>
-                  <h3 className="font-semibold text-lg md:text-xl mb-2 text-gray-800">{item.title}</h3>
-                  <p className="text-gray-600">{item.description}</p>
-                </div>
+          {/* Team Section */}
+          <div className="mt-16">
+            <h2 className="text-3xl font-bold mb-8 text-center">{merged.team.title}</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {merged.team.members.map((member, idx) => {
+                const IconComponent = member.icon;
+                return (
+                  <div key={idx} className="flex flex-col items-center p-6 bg-gray-50 rounded-lg">
+                    <div className="w-16 h-16 mb-4 text-primary">
+                      <IconComponent className="w-full h-full" />
+                    </div>
+                    <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
+                    <p className="text-primary font-medium mb-3">{member.role}</p>
+                    <p className="text-gray-600 text-center">{member.description}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Process Section */}
+      <section className="py-16 bg-gray-800 text-gray-100 ">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-8">{merged.process.title}</h2>
+          <p className="mb-12">{merged.process.description}</p>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {merged.process.steps.map((step, idx) => (
+              <div key={idx} className="bg-white p-6 rounded-lg shadow-md text-gray-600">
+                <h3 className="text-xl font-semibold mb-4">{step.title}</h3>
+                <p>{step.description}</p>
               </div>
             ))}
           </div>
-        </section>
-      )}
-    </div> // End Root div
+        </div>
+      </section>
+
+      {/* Takeaways Section */}
+      <section className="py-16">
+        <div className="container mx-auto max-w-5xl px-4">
+          <h2 className="text-3xl font-bold mb-8 text-center">{merged.takeaways.title}</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {merged.takeaways.points.map((point, idx) => (
+              <div key={idx} className="bg-white p-6 rounded-lg shadow-md">
+                <p className="text-gray-600">{point}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+    </div>
   );
 }
