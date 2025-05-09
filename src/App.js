@@ -1,6 +1,6 @@
 // src/App.jsx
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -20,7 +20,7 @@ import AiTelecomCopy from './pages/case-studies/AiTelecomCopy.js';
 
 function App() {
   return (
-    <>
+    <Router>
       <ScrollToTop />
       <div className="App">
         <Header />
@@ -36,7 +36,7 @@ function App() {
         </Routes>
         <Footer />
       </div>
-    </>
+    </Router>
   );
 }
 
