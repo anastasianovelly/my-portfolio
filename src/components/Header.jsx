@@ -1,18 +1,19 @@
 // src/components/Header.jsx
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import ContactPanel from './ContactPanel';
 
 const navLinks = [
   { to: '/projects', label: 'Projects' },
   { to: '/case-studies', label: 'Case Studies' },
   { to: '/about', label: 'About' },
-  { to: '/contact', label: 'Contact' },
 ];
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isHeaderFixed, setIsHeaderFixed] = useState(false);
+  const [isContactOpen, setIsContactOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,9 +38,15 @@ const Header = () => {
     setIsMobileMenuOpen(false);
   };
 
+  const handleContactClick = (e) => {
+    e.preventDefault();
+    setIsContactOpen(true);
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <>
-      <header className={`${isHeaderFixed ? 'fixed' : 'relative'} top-0 left-0 right-0 w-full z-50 bg-gray-100 py-2 sm:py-3`}>
+      <header className={`${isHeaderFixed ? 'fixed' : 'relative'} top-0 left-0 right-0 w-full z-40 bg-gray-100 py-2 sm:py-3`}>
         <div className="container mx-auto flex justify-between items-center px-2 sm:px-0">
           {/* Logo/Title Link */}
           <Link
@@ -54,14 +61,23 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-4" role="navigation" aria-label="Main navigation">
             {navLinks.map((link) => (
-              <Link
+              <NavLink
                 key={link.to}
                 to={link.to}
-                className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
+                className={({ isActive }) => 
+                  `text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium relative
+                   ${isActive ? 'after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary' : ''}`
+                }
               >
                 {link.label}
-              </Link>
+              </NavLink>
             ))}
+            <button
+              onClick={handleContactClick}
+              className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
+            >
+              Contact
+            </button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -91,19 +107,37 @@ const Header = () => {
           >
             <nav className="px-2 pt-2 pb-3 space-y-1 sm:px-3" role="navigation" aria-label="Mobile navigation">
               {navLinks.map((link) => (
-                <Link
+                <NavLink
                   key={link.to}
                   to={link.to}
-                  className="text-gray-600 hover:text-gray-900 hover:bg-gray-200 block px-3 py-2 rounded-md text-base font-medium"
+                  className={({ isActive }) => 
+                    `block px-3 py-2 rounded-md text-base font-medium
+                     ${isActive 
+                       ? 'text-primary border-l-4 border-primary pl-2' 
+                       : 'text-gray-600 hover:text-gray-900 hover:bg-gray-200'}`
+                  }
                   onClick={closeMobileMenu}
                 >
                   {link.label}
-                </Link>
+                </NavLink>
               ))}
+              <button
+                onClick={handleContactClick}
+                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-200"
+              >
+                Contact
+              </button>
             </nav>
           </div>
         )}
       </header>
+
+      {/* Contact Panel */}
+      <ContactPanel 
+        isOpen={isContactOpen} 
+        onClose={() => setIsContactOpen(false)} 
+      />
+
       {/* Placeholder to avoid layout jump when header becomes fixed */}
       {isHeaderFixed && <div className="h-16" />}
     </>

@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 
 export default function Projects() {
   const [filter, setFilter] = useState('all');
-  const navigate = useNavigate();
 
   const projects = [
     {
@@ -37,10 +36,6 @@ export default function Projects() {
     e.target.src = 'https://placehold.co/600x400/cccccc/FFFFFF?text=Image+Not+Found';
   };
 
-  const handleProjectClick = (projectId) => {
-    navigate(`/project${projectId}`);
-  };
-
   return (
     <div className="font-sans bg-white">
       <main className="container mx-auto px-6 py-12 md:py-20">
@@ -60,7 +55,7 @@ export default function Projects() {
               onClick={() => setFilter(cat)}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors
                 ${filter === cat 
-                  ? 'bg-blue-600 text-white' 
+                  ? 'bg-primary text-white' 
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
             >
               {cat.toUpperCase()}
@@ -73,10 +68,10 @@ export default function Projects() {
           {projects
             .filter(project => filter === 'all' || project.category === filter)
             .map(project => (
-              <div 
+              <Link 
                 key={project.id}
-                onClick={() => handleProjectClick(project.id)}
-                className="group bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 cursor-pointer"
+                to={project.id === 1 ? "/project1" : `/project${project.id}`}
+                className="group bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"
               >
                 <div className="relative">
                   <img
@@ -97,11 +92,11 @@ export default function Projects() {
                       </span>
                     ))}
                   </div>
-                  <div className="flex items-center text-blue-600 font-medium group-hover:text-blue-800">
+                  <div className="flex mt-auto items-center text-blue-600 font-medium group-hover:text-blue-800">
                     View Project <ArrowRightIcon className="h-4 w-4 ml-2" />
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
         </div>
       </main>
