@@ -71,7 +71,7 @@ export default function TelecomBilling() {
           </section>
     
            {/* --- Introduction Section --- */}
-          <section className="container mx-auto px-4 py-12 md:py-16">
+          <section className="w-full px-4 py-12 md:py-16">
              <div className="max-w-3xl mx-auto text-center">
                 <h2 className="text-2xl md:text-3xl font-semibold mb-4">Introduction</h2>
                 <p className="text-lg text-gray-700">
@@ -100,12 +100,12 @@ export default function TelecomBilling() {
           </section>
     
           {/* --- Timeline Section --- */}
-          <section className="container mx-auto px-4 py-12 md:py-16">
+          <section className="w-full px-4 py-12 md:py-16">
             <h2 className="text-3xl font-bold text-center mb-12 md:mb-16">Project Timeline</h2>
     
             {/* Timeline Container: Relative positioning for the line and dots */}
             {/* Using border-l for the line, pl for offset, space-y for spacing between items */}
-            <div className="relative max-w-2xl mx-auto border-l-4 border-blue-500 pl-8 md:pl-10 space-y-10">
+            <div className="relative max-w-2xl mx-auto border-l-4 border-primary pl-8 md:pl-10 space-y-10">
     
               {caseStudyData.timeline.map((item, index) => (
                 // Timeline Item Container: Relative for positioning the dot
@@ -114,14 +114,14 @@ export default function TelecomBilling() {
                   {/* '-left-[Xpx]' positions it over the border line. Calculation: padding-left (pl-8/10 -> 32px/40px) + half dot width (w-6 -> 24px / 2 = 12px). Needs adjustment based on padding and dot size.*/}
                   {/* Added bg-white around the dot to cleanly overlap the blue line */}
                    <div className="absolute -left-[44px] md:-left-[52px] top-0 z-10 flex items-center justify-center w-6 h-6 mt-1">
-                        <div className="bg-blue-500 w-6 h-6 rounded-full flex items-center justify-center shadow">
+                        <div className="bg-primary w-6 h-6 rounded-full flex items-center justify-center shadow">
                              <span className="text-white text-xs font-semibold">{item.phase}</span>
                         </div>
                    </div>
     
                   {/* Timeline Item Content */}
                   <div className="bg-gray-50 p-4 md:p-6 rounded-lg shadow-sm border border-gray-200 ml-4 md:ml-0">
-                     <span className="text-sm font-medium text-blue-600 block mb-1">{item.date}</span>
+                     <span className="text-sm font-medium text-primary block mb-1">{item.date}</span>
                     <h3 className="font-semibold text-lg md:text-xl mb-2 text-gray-800">{item.title}</h3>
                     <p className="text-gray-600">{item.description}</p>
                   </div>
@@ -132,5 +132,4 @@ export default function TelecomBilling() {
         </div>
       );
   }
-  
-  
+

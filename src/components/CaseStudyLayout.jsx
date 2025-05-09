@@ -5,7 +5,7 @@ import { ArrowLeftIcon } from '@heroicons/react/24/outline'; // Import icon for 
 // Default data structure for safety, in case props are missing
 const defaultData = {
   title: "Case Study",
-  heroImage: "https://placehold.co/1200x600/cccccc/FFFFFF?text=Image+Not+Available",
+  heroImage: "https://images.unsplash.com/photo-1576153192396-180ecef2a715?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   introduction: "Introduction content not provided.",
   features: [
     { title: "Feature/Challenge", description: "Details not provided." }
@@ -103,18 +103,18 @@ export default function NewCaseStudyLayout(props) {
       {caseStudyData.timeline && caseStudyData.timeline.length > 0 && (
         <section className="container mx-auto px-4 py-12 md:py-16">
           <h2 className="text-3xl font-bold text-center mb-12 md:mb-16 text-gray-800">Project Timeline</h2>
-          <div className="relative max-w-2xl mx-auto border-l-4 border-blue-500 pl-8 md:pl-10 space-y-10">
+          <div className="relative max-w-2xl mx-auto border-l-4 border-primary pl-8 md:pl-10 space-y-10">
             {caseStudyData.timeline.map((item, index) => (
               <div key={index} className="relative">
                  {/* Timeline Dot */}
                  <div className="absolute -left-[44px] md:-left-[52px] top-0 z-10 flex items-center justify-center w-6 h-6 mt-1">
-                      <div className="bg-blue-500 w-6 h-6 rounded-full flex items-center justify-center shadow">
+                      <div className="bg-primary w-6 h-6 rounded-full flex items-center justify-center shadow">
                            <span className="text-white text-xs font-semibold">{item.phase}</span>
                       </div>
                  </div>
                 {/* Timeline Item Content */}
                 <div className="bg-gray-50 p-4 md:p-6 rounded-lg shadow-sm border border-gray-200 ml-4 md:ml-0">
-                   <span className="text-sm font-medium text-blue-600 block mb-1">{item.date}</span>
+                   <span className="text-sm font-medium text-primary block mb-1">{item.date}</span>
                   <h3 className="font-semibold text-lg md:text-xl mb-2 text-gray-800">{item.title}</h3>
                   <p className="text-gray-600">{item.description}</p>
                 </div>

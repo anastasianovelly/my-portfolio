@@ -68,45 +68,47 @@ export default function CaseStudyPage() {
             {/* Header component usage removed */}
 
             {/* Main content area */}
-            <main className="container mx-auto px-6 py-12 md:py-20">
+            <main className="flex-grow pt-20">
+                <div className="w-full container mx-auto"> {/* changed from "container mx-auto max-w-7xl" */}
 
-                {/* Page Title */}
-                <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-center">Case Studies</h1>
-                <p className="text-lg text-gray-600 text-center mb-12 max-w-2xl mx-auto">
-                    Explore some of the projects I've worked on, showcasing my approach to solving complex UX challenges across various industries.
-                </p>
+                    {/* Page Title */}
+                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-center">Case Studies</h1>
+                    <p className="text-lg text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+                        Explore some of the projects I've worked on, showcasing my approach to solving complex UX challenges across various industries.
+                    </p>
 
-                {/* Grid for Case Study Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {/* Map over the caseStudies array to display each one */}
-                    {caseStudies.map((study) => (
-                        // Use Link to wrap the card, navigating to the specific case study route
-                        <Link key={study.id} to={study.link} className="block group">
-                            <article className="bg-white rounded-lg shadow-md overflow-hidden transition transform group-hover:-translate-y-1 group-hover:shadow-lg h-full flex flex-col">
-                                {/* Case Study Image */}
-                                <img
-                                    src={study.imageUrl}
-                                    alt={`${study.title} Thumbnail`}
-                                    className="w-full h-48 object-cover"
-                                    onError={handleImageError} // Add error handler for broken images
-                                />
-                                {/* Case Study Content */}
-                                <div className="p-6 flex flex-col flex-grow">
-                                    <h2 className="text-xl font-semibold text-gray-900 mb-2">{study.title}</h2>
-                                    {/* Use default text-gray-600 */}
-                                    <p className="text-gray-600 mb-4 flex-grow">{study.description}</p>
-                                    {/* Use default text-blue-600 */}
-                                    {/* Link indication */}
-                                    <span className="text-blue-600 font-semibold group-hover:underline inline-flex items-center mt-auto">
-                                        View Case Study
-                                        <ArrowRightIcon className="h-4 w-4 ml-1" />
-                                    </span>
-                                </div>
-                            </article>
-                        </Link>
-                    ))}
+                    {/* Grid for Case Study Cards */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {/* Map over the caseStudies array to display each one */}
+                        {caseStudies.map((study) => (
+                            // Use Link to wrap the card, navigating to the specific case study route
+                            <Link key={study.id} to={study.link} className="block group">
+                                <article className="bg-white rounded-lg shadow-md overflow-hidden transition transform group-hover:-translate-y-1 group-hover:shadow-lg h-full flex flex-col">
+                                    {/* Case Study Image */}
+                                    <img
+                                        src={study.imageUrl}
+                                        alt={`${study.title} Thumbnail`}
+                                        className="w-full h-48 object-cover"
+                                        onError={handleImageError} // Add error handler for broken images
+                                    />
+                                    {/* Case Study Content */}
+                                    <div className="p-6 flex flex-col flex-grow">
+                                        <h2 className="text-xl font-semibold text-gray-900 mb-2">{study.title}</h2>
+                                        {/* Use default text-gray-600 */}
+                                        <p className="text-gray-600 mb-4 flex-grow">{study.description}</p>
+                                        {/* Use default text-primary */}
+                                        {/* Link indication */}
+                                        <span className="text-primary font-semibold group-hover:underline inline-flex items-center mt-auto">
+                                            View Case Study
+                                            <ArrowRightIcon className="h-4 w-4 ml-1" />
+                                        </span>
+                                    </div>
+                                </article>
+                            </Link>
+                        ))}
+                    </div>
+
                 </div>
-
             </main> {/* End main content area */}
 
             {/* Footer component usage removed */}

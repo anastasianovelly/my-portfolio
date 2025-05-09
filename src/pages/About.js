@@ -28,7 +28,7 @@ export default function About() {
             {/* Header component usage removed */}
 
             {/* Main content area - Removed flex-grow */}
-            <main className="container mx-auto px-6 py-12 md:py-20">
+            <main className="w-full px-6 py-12 md:py-20">
 
                 {/* Page Title */}
                 <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 text-center">About Me</h1>

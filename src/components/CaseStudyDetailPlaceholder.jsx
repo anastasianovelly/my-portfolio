@@ -37,8 +37,8 @@ export default function CaseStudyDetailPlaceholder() {
             {/* Dark overlay for better text readability */}
             <div className="absolute inset-0 bg-black opacity-40"></div>
 
-            {/* Hero Content Container */}
-            <div className="container mx-auto px-4 text-center relative z-10">
+            {/* Hero Content Container changed to full width */}
+            <div className="w-full px-4 text-center relative z-10">
                {/* Display dynamic title */}
                <h1 id="case-study-title" className="text-4xl md:text-6xl font-bold mb-4">
                     Case Study: {displayTitle}
@@ -47,7 +47,7 @@ export default function CaseStudyDetailPlaceholder() {
           </section>
 
           {/* --- Back Link Section (from EnterpriseUX layout) --- */}
-          <div className="container mx-auto px-4 pt-8 md:pt-12">
+          <div className="w-full px-4 pt-8 md:pt-12"> {/* changed from "container mx-auto px-4 pt-8 md:pt-12" */}
             <Link
                 to="/casestudypage" // Link back to the main case studies list page
                 className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition duration-300"
@@ -60,7 +60,7 @@ export default function CaseStudyDetailPlaceholder() {
            {/* --- Introduction Section (Placeholder Content) --- */}
            {/* Using structure from EnterpriseUX layout */}
           <section className="container mx-auto px-4 py-8 md:py-12">
-             <div className="max-w-3xl mx-auto text-center">
+             <div className="mx-auto text-center">
                 {/* Using a generic title, could also use {displayTitle} */}
                 <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-gray-800">Overview</h2>
                 {/* Display placeholder text */}
